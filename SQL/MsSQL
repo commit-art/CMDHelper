@@ -1,0 +1,17 @@
+ALTER TABLE [DatabaseName].[dbo].[tableName] ALTER COLUMN bonus VARCHAR (8000);		--max length for varchar
+
+
+ALTER TABLE [DatabaseName].[dbo].[tableName] ADD [column_name] [varchar](50) NULL;
+CREATE NONCLUSTERED INDEX [IX_tableName_column_name] ON [DatabaseName].[dbo].[tableName] ([column_name]);
+
+
+ALTER TABLE [DatabaseName].[dbo].[tableName] ADD is_printed bit DEFAULT 0 NULL;
+
+
+ALTER TABLE [DatabaseName].[dbo].[tableName] ADD [order_number] [int] NULL;
+CREATE NONCLUSTERED INDEX [IX_tableName_order_number] ON [DatabaseName].[dbo].[tableName] ([order_number]);
+
+
+
+
+UPDATE [Project].[dbo].[users] SET [Project].[dbo].[users].pass='---' WHERE login='test'

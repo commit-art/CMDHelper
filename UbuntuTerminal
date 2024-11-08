@@ -1,0 +1,69 @@
+=================================================================================  General cmd
+cat /etc/*-release                                                 // Get version
+
+sudo apt-get update && sudo apt-get dist-upgrade                   // Update system
+apt list --installed
+
+uname -r
+dpkg --get-selections | grep linux-image
+sudo apt purge linux-image-5.13.0-*
+
+-------------------------------------------------------------------------------- cache cleaning
+sudo apt-get autoclean                                             // Remove .deb packages in caches
+sudo apt-get autoremove                                            // Remove unused packages
+sudo du -sh /var/cache/apt                                         // Size of packages
+sudo apt-get clean                                                 // Full apt cache remove
+journalctl --disk-usage                                            // Size journal space
+sudo journalctl --vacuum-time=3d                                   // Remove except last 3 days						  
+						   
+sudo find / -size +500M -ls                                        // Large files finding
+                                                                   // Docker log truncate
+sudo truncate -s 0 /var/lib/docker/volumes/html_dbdata/_data/general.log 		      		
+--------------------------------------------------------------------------------
+sudo swapoff -a                                                    // Disable swap
+vi /etc/fstab 						           // Permanent #disable		
+
+su - www-data                                                      // Su switch user
+sudo passwd tom                                                    // Change pwd user
+
+tar -zcvf archive.tar.gz directory/                                // Unpack
+
+whereis git                                                        // Program path
+du -hs /path/to/directory                                          // Total folder size
+
+stat -c "%a %n" *                                                  // Digits permissiion
+=============================================================================== Network
+sudo netstat -tvaep                                                // Active network connections
+sudo netstat -anp | grep apache                                    // Listening apache port and PID from this if it's running
+sudo netstat -tulpn                                                // Active Internet connections (only servers)
+sudo netstat -nr                                                   // Interfaces priority
+nmcli device    
+nmcli connection delete 7be6982a3                                  // Remove interface  
+
+netstat -tlnup | grep -i 3306	
+=============================================================================== Services
+sudo service name start
+sudo service name stop
+sudo service name restart
+sudo service name status
+
+sudo systemctl disable name                                     // Disable autoload
+systemctl list-units --type=service				// List of services
+journalctl -u name						// Service log
+=============================================================================== MySQL
+sudo service mysql start
+sudo service mysql stop
+sudo service mysql restart
+sudo service mysql status
+
+sudo systemctl disable mysql                                       // Disable autoload
+=============================================================================== PS list
+htop
+top
+ps ax | grep 'php'
+  
+=============================================================================== Disc init
+ls /dev/sd*
+
+sudo mount /dev/sdab /media/exchange
+

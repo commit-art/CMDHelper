@@ -1,0 +1,71 @@
+systemctl enable docker.service                      // Start as service
+systemctl stop docker.service                        // Stop service
+systemctl status docker.service                      // Stop service
+==================================================================================================================== Docker-engine
+sudo docker run 734a47c86379
+
+sudo docker run --rm ubuntu:latest cat /etc/os-release  // Get the latest version of ubuntu 
+
+sudo docker stop containerName
+sudo docker start containerName
+sudo docker pause containerName                       // Pause container
+sudo docker unpause containerName                     // Unpause container
+
+
+sudo docker kill $(sudo docker ps -q)                 // Stop all
+
+docker container rm cc3f2ff51cab cd20b396a061         // Removing container	
+
+sudo docker ps                                        // Listing the running containers
+			
+sudo docker container ls --all                        // Show all containers
+
+
+
+sudo docker exec -it containerName bash/sh            // Connect inside the container 
+
+
+                                  // Docker images list
+
+sudo docker network ls                                // Get networks		
+
+sudo docker exec containerName cat /etc/hosts         // Get IP container
+getent hosts nginx | awk '{ print $1 }'	
+	
+sudo docker search
+sudo docker pull	containerName			
+sudo docker push
+
+
+sudo docker exec -i db mysql -u root -f -proot mysql < dumq.sql  // Import to db
+==================================================================================================================== Clean System
+
+sudo docker system prune   			       	WARNING! This will remove: (including volumes without containers)
+        							- all stopped containers
+        							- all networks not used by at least one container
+        							- all dangling images
+        							- all build cache
+
+sudo docker image prune -a                             // Remove all images
+
+sudo docker network prune                              // Remove networks
+sudo docker image prune					
+sudo docker container prune
+sudo docker volume prune
+==================================================================================================================== Compose
+docker-compose -v                                      // Version
+docker -v
+
+sudo docker-compose up -d                              // This runs docker-compose up in detached mode, pulls the needed Docker images
+
+sudo docker-compose up -d --build                      // Rebuild docker configs
+sudo docker-compose down                               // Stopping and remove containers
+sudo docker-compose down --volumes                     // Shutdown and cleanup volumes
+
+
+make help
+==================================================================================================================== Logs
+sudo docker logs -f --details monitoring
+sudo docker logs containerName                          // show logs in docker-wp_db_1
+
+cat fileName                                            // Logs inside container
