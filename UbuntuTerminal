@@ -36,8 +36,9 @@ stat -c "%a %n" *                                                  // Digits per
 sudo netstat -tvaep                                                // Active network connections
 sudo netstat -anp | grep apache                                    // Listening apache port and PID from this if it's running
 sudo netstat -tulpn                                                // Active Internet connections (only servers)
+hostname -I                                                        // Display the IP address(es) assigned to the machine
 sudo netstat -nr                                                   // Interfaces priority
-nmcli device    
+nmcli device                                                       // Show information about the devices on your system
 nmcli connection delete 7be6982a3                                  // Remove interface  
 
 netstat -tlnup | grep -i 3306	
