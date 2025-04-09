@@ -1,0 +1,29 @@
+By default, NGINX stores these configuration files in 
+
+cd /etc/nginx/sites-available
+
+
+
+-------------------------------------------------------  1
+/etc/nginx/sites-available/site1.com
+
+server {
+    listen 80;
+    server_name site1.com www.site1.com;
+
+    root /var/www/site1.com/public_html;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+
+-------------------------------------------------------  2
+sudo ln -s /etc/nginx/sites-available/site1.com /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/site2.com /etc/nginx/sites-enabled/
+
+
+-------------------------------------------------------  3
+sudo nginx -t
+sudo systemctl restart nginx

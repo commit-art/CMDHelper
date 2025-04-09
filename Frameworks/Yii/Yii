@@ -1,0 +1,19 @@
+========================================================= The following commands are available:
+php yii help
+========================================================= Local server
+php yii serve/index                                       // Runs PHP built-in web server
+
+
+========================================================= Migrations
+php yii migrate                                           // Run migrations
+php yii migrate/up 1234567890                             // Run specific migration
+php yii migrate/create create_user_table                  // Create new migration
+php yii migrate/history                                   // Last 10 migrations
+php yii migrate/down
+
+
+========================================================= Cache
+php yii cache/flush-all                                   // This command clears all cached data
+
+========================================================= 
+php yii log/clear
