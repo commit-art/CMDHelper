@@ -90,15 +90,9 @@ CREATE TABLE `payments` (
   `remote_info` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-CREATE TABLE user(
- => ID INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
- => username varchar(25) NOT NULL UNIQUE KEy;  	
- => password_hash varchar(255) NOT NULL,
- => active BOOLEAN NOT NULL DEFAULT 0,
- => email VARCHAR(255) NOT NULL,
- => first_name VARCHAR(30),
- => last_name VARCHAR(50),
- => date_of_birth DATE,
+============================================================================================================= DATE OF TABLE CREATED
+ SELECT create_time
+FROM INFORMATION_SCHEMA.TABLES
+WHERE table_schema = 'auth_service' AND table_name = 'cache_locks';
  => created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
  => updated TIMEStAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);

@@ -292,6 +292,20 @@ sudo supervisorctl update
 sudo supervisorctl start horizon
 ========================================================= Dumps & Debug
 logs()->critical('$data',[$data]);
+
+
+2 User Client Facade
+$client = Http::baseUrl($this->apiUrl);
+$client->withHeaders($this->getHeaders());
+$this->client = $client;
+$this->client->{$method}($request->url, $params);
+
+logs()->error(__FUNCTION__, [$data]);
+logs()->info(__FUNCTION__, [$data]);
+
+
+ADD POSTMAN TO SWAGGER
+
 Http::dd()->get('http://example.com');
 
 DB::table('users')->where('votes', '>', 100)->dd();

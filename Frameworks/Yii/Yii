@@ -17,3 +17,7 @@ php yii cache/flush-all                                   // This command clears
 
 ========================================================= 
 php yii log/clear
+========================================================= SQL
+$query->createCommand()->getRawSql();
+========================================================= Debug
+Yii::debug($variable, __METHOD__);

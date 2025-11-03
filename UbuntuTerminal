@@ -66,9 +66,12 @@ sudo systemctl disable mysql                                       // Disable au
 htop
 top
 ps ax | grep 'php'
-  
+top -u userName
 =============================================================================== Disc init
 ls /dev/sd*
 
 sudo mount /dev/sdab /media/exchange
+=============================================================================== Screen
 
+
+less +G /tmp/service_dsp/runtime/error.log
